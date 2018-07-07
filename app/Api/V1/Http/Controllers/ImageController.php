@@ -6,7 +6,7 @@ use App\Api\V1\Http\Controllers\Controller;
 use App\Api\V1\Http\Requests\Image\DeleteImage;
 use App\Api\V1\Http\Requests\Image\UploadImage;
 use App\Entities\Image;
-use App\Services\DeleteImageService;
+use App\Services\ShowImageService;
 use App\Services\UploadImageService;
 use App\Transformers\ImageTransformer;
 use Illuminate\Http\Request;
@@ -41,8 +41,6 @@ class ImageController extends Controller
             $this->transformer(),
             $this->parameters()
         )->setStatusCode(201);
-
-        return $this->response->created();
     }
 
     /**
@@ -54,7 +52,7 @@ class ImageController extends Controller
      */
     public function show(Image $image)
     {
-        return response()->file(storage_path("app/public/{$image->path}"));
+        return ShowImageService::handle($image);
     }
 
     /**

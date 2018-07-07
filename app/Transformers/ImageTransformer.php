@@ -3,12 +3,15 @@
 namespace App\Transformers;
 
 use App\Entities\Image;
+use App\Transformers\DeckTransformer;
+use App\Transformers\UserTransformer;
 use League\Fractal;
 
 class ImageTransformer extends Fractal\TransformerAbstract
 {
     protected $availableIncludes = [
         'user',
+        'decks',
     ];
 
     public function transform(Image $image)
@@ -32,6 +35,17 @@ class ImageTransformer extends Fractal\TransformerAbstract
     {
         $user = $image->user;
 
-        return $this->item($user, UserTransformer::class);
+        return $this->item($user, new UserTransformer);
+    }
+
+    /**
+     * @param  Image
+     * @return \League\Fractal\Resource\Item
+     */
+    public function includeDecks(Image $image)
+    {
+        $decks = $image->decks;
+
+        return $this->collection($decks, new DeckTransformer);
     }
 }

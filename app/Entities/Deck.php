@@ -4,18 +4,23 @@ namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Example extends Model
+class Deck extends Model
 {
     public $fillable = [
-        'hash'
+        'name',
     ];
 
     public static $rules = [
-        'hash' => 'required|string',
+        'name' => 'required|string',
     ];
 
     public function user()
     {
         return $this->belongsTo('App\Entities\User');
+    }
+
+    public function images()
+    {
+        return $this->belongsToMany('App\Entities\Image');
     }
 }

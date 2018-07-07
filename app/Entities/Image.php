@@ -14,4 +14,9 @@ class Image extends Model
     {
         return $this->belongsTo('App\Entities\User');
     }
+
+    public function decks()
+    {
+        return $this->belongsToMany('App\Entities\Deck');
+    }
 }
