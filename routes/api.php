@@ -6,7 +6,6 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::middleware(['bindings'])->group(function () {
     $api = app('Dingo\Api\Routing\Router');
     $api->version('v1', function ($api) {
@@ -20,9 +19,19 @@ Route::middleware(['bindings'])->group(function () {
             ['only' => ['index', 'show', 'update']]
         );
 
-        Route::apiResource(
-            'examples',
-            '\App\Api\V1\Http\Controllers\ExampleController'
+        Route::resource(
+            'images',
+            '\App\Api\V1\Http\Controllers\ImageController'
+        );
+
+        Route::resource(
+            'decks',
+            '\App\Api\V1\Http\Controllers\DeckController'
+        );
+
+        Route::resource(
+            'shuffle',
+            '\App\Api\V1\Http\Controllers\ShuffleController'
         );
     });
 });

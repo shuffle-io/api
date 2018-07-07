@@ -16,7 +16,8 @@
         "laravel/tinker": "^1.0",
         "league/fractal": "^0.17.0",
         "prettus/l5-repository": "^2.6",
-        "santigarcor/laratrust": "5.0.*"
+        "santigarcor/laratrust": "5.0.*",
+        "sentry/sentry-laravel": "^0.9.1"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
