@@ -34,4 +34,8 @@ class User extends Authenticatable
     public function examples() {
         return $this->hasMany('App\Entities\Example');
     }
+
+    public function images() {
+        return $this->hasMany('App\Entities\Image');
+    }
 }

@@ -24,5 +24,10 @@ Route::middleware(['bindings'])->group(function () {
             'examples',
             '\App\Api\V1\Http\Controllers\ExampleController'
         );
+
+        Route::resource(
+            'images',
+            '\App\Api\V1\Http\Controllers\ImageController'
+        );
     });
 });

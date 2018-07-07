@@ -4,15 +4,11 @@ namespace App\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Example extends Model
+class Image extends Model
 {
-    public $fillable = [
-        'hash'
-    ];
+    public $fillable = [];
 
-    public static $rules = [
-        'hash' => 'required|string',
-    ];
+    public static $rules = [];
 
     public function user()
     {
