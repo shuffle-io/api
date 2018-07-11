@@ -18,6 +18,7 @@ class ShuffleDeckService
     {
         $length = count($images);
 
+        // srand((double) microtime() * 1000000);
         srand((double) microtime() * 1000000);
         $ndx = rand(0, $length - 1);
 
