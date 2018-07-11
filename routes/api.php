@@ -31,7 +31,8 @@ Route::middleware(['bindings'])->group(function () {
 
         Route::resource(
             'shuffle',
-            '\App\Api\V1\Http\Controllers\ShuffleController'
+            '\App\Api\V1\Http\Controllers\ShuffleController',
+            ['only' => ['show']]
         );
     });
 });
