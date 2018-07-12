@@ -11,7 +11,7 @@ php:
 before_script:
   - cd laradock
   - cp env-example .env
-  - docker-compose up --build -d nginx wprkspace
+  - docker-compose up --build -d nginx workspace
 
 script:
   - vendor/bin/phpunit
