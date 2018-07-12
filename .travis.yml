@@ -15,7 +15,7 @@ before_script:
   - cd ..
 
 script:
-  - ./vendor/bin/phpunit
+  - vendor/bin/phpunit
 
 
 
