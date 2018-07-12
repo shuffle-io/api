@@ -10,7 +10,7 @@ php:
 
 before_script:
   - cd laradock
-  - docker-compose up --build nginx wprkspace
+  - docker-compose up --build -d nginx wprkspace
 
 script:
   - vendor/bin/phpunit
