@@ -14,4 +14,4 @@ before_script:
   - docker-compose up --build -d nginx workspace
 
 script:
-  - vendor/bin/phpunit
+  - ./vendor/bin/phpunit
